@@ -88,4 +88,4 @@ Read the full explanation on the [NoHello website](https://nohello.com/).
 ## Credits
 
 Inspired by [NoHello.com](https://nohello.com/).  
-Created by [Your Name].
+Created by Lantas.
