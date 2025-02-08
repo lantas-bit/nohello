@@ -1,0 +1,28 @@
+name: Auto Commit
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Menjalankan setiap hari jam 00:00 UTC
+  workflow_dispatch: # Bisa dijalankan manual juga
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "Lantas"
+          git config --global user.email "lantas@example.com"
+
+      - name: Update File
+        run: |
+          echo "Update: $(date)" >> auto-update.log
+
+      - name: Commit and Push
+        run: |
+          git add .
+          git commit -m "Auto commit: $(date)"
+          git push
